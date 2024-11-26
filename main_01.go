@@ -1,43 +1,43 @@
 package main
 
 import (
-  "net/http"
+	"net/http"
 
-  "github.com/gin-gonic/gin"
+	"github.com/gin-gonic/gin"
 )
 
 func main() {
-  router := gin.Default()
-  //Default API Mrthod
-  router.GET("/", func(c *gin.Context) {
-    c.JSON(http.StatusOK, gin.H{
-      "message": "APT SERVER STATUS OK!",
-    })
-  })
+	router := gin.Default()
+	//Default API Mrthod
+	router.GET("/", func(c *gin.Context) {
+		c.JSON(http.StatusOK, gin.H{
+			"message": "APT SERVER STATUS OK!",
+		})
+	})
 
-//Employee API Mrthod
-  router.GET("/employee", func(c *gin.Context) {
-    c.JSON(http.StatusOK, gin.H{
-      "message": "Employee GET Method!",
-    })
-  })
-  
-  router.POST("/employee", func(c *gin.Context) {
-    c.JSON(http.StatusOK, gin.H{
-      "message": "Employee POST Method!",
-    })
-  })
+	//Employee API Mrthod
+	router.GET("/employee", func(c *gin.Context) {
+		c.JSON(http.StatusOK, gin.H{
+			"message": "Employee GET Method!",
+		})
+	})
 
-  router.PUT("/employee", func(c *gin.Context) {
-    c.JSON(http.StatusOK, gin.H{
-      "message": "Employee PUT Method!",
-    })
-  })
+	router.POST("/employee", func(c *gin.Context) {
+		c.JSON(http.StatusOK, gin.H{
+			"message": "Employee POST Method!",
+		})
+	})
 
-  router.DELETE("/employee", func(c *gin.Context) {
-    c.JSON(http.StatusOK, gin.H{
-      "message": "Employee DELETE Method!",
-    })
-  })
-  router.Run() // listen and serve on 0.0.0.0:8080 (for windows "localhost:8080")
+	router.PUT("/employee", func(c *gin.Context) {
+		c.JSON(http.StatusOK, gin.H{
+			"message": "Employee PUT Method!",
+		})
+	})
+
+	router.DELETE("/employee", func(c *gin.Context) {
+		c.JSON(http.StatusOK, gin.H{
+			"message": "Employee DELETE Method!",
+		})
+	})
+	router.Run() // listen and serve on 0.0.0.0:8080 (for windows "localhost:8080")
 }
